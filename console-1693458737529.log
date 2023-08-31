@@ -1,0 +1,243 @@
+var a;
+undefined
+typeof a;
+'undefined'
+a = 100;
+100
+typeof a;
+'number'
+a = "Amit";
+'Amit'
+typeof a;
+'string'
+a= true;
+true
+typeof a;
+'boolean'
+a=10;
+10
+typeof a;
+'number'
+a + 20;
+30
+a;
+10
+a = a + 20;
+30
+a= 10;
+10
+a=10000000000;
+10000000000
+typeof a;
+'number'
+a=1;
+1
+typeof a;
+'number'
+a=100.20;
+100.2
+typeof a;
+'number'
+a=10/0;
+Infinity
+typeof a;
+'number'
+typeof Infinity;
+'number'
+a=10;
+10
+a + undefined;
+NaN
+typeof NaN;
+'number'
+isNan(10 + undefined);
+VM684:1 Uncaught ReferenceError: isNan is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM684:1
+isNaN(10 + undefined);
+true
+a;
+10
+isNaN(a)?0:a;
+10
+a =NaN;
+NaN
+isNaN(a)?0:a;
+0
+a = 100;
+100
+isFinite(a)?a:0;
+100
+a=10/0;
+Infinity
+isFinite(a)?a:0;
+0
+a=10;
+10
+var b = "20":
+VM965:1 Uncaught SyntaxError: Unexpected token ':'
+var b = "20";
+undefined
+a + b;
+'1020'
+a + parseInt(b);
+30
+10 + "20.3";
+'1020.3'
+10 + parseFloat("20.3");
+30.3
+var name = "Amit";
+undefined
+typeof name;
+'string'
+name ='Amit';
+'Amit'
+typeof name;
+'string'
+name = `hgjkdfgkjdfhgkhjd
+GDFKJGHDFHKJ
+GHDFKJHGDFGHDFKJGH`;
+'hgjkdfgkjdfhgkhjd\nGDFKJGHDFHKJ\nGHDFKJHGDFGHDFKJGH'
+console.log(name);
+VM1319:1 hgjkdfgkjdfhgkhjd
+GDFKJGHDFHKJ
+GHDFKJHGDFGHDFKJGH
+undefined
+a;
+10
+b = 20;
+20
+var c = a +b;
+undefined
+"A is "+a+" B is "+b+" c is "+c;
+'A is 10 B is 20 c is 30'
+`A is ${a} B is ${b} C is ${c}`; // String Interpolation (es6)
+'A is 10 B is 20 C is 30'
+var t = 54353464564565475765756756754646456546464;
+undefined
+t;
+5.435346456456547e+40
+typeof t;
+'number'
+Number.isSafeInteger(t);
+false
+t = Number.MAX_SAFE_INTEGER;
+9007199254740991
+t++;
+9007199254740991
+t++;
+9007199254740992
+t++;
+9007199254740992
+t++;
+9007199254740992
+t++;
+9007199254740992
+t++;
+9007199254740992
+var t2 =9007199254740992n; // bigint literal
+undefined
+typeof t2;
+'bigint'
+t2++;
+9007199254740992n
+t2++;
+9007199254740993n
+t2++;
+9007199254740994n
+t2++;
+9007199254740995n
+t2++;
+9007199254740996n
+t2++;
+9007199254740997n
+t2 + 333;
+VM1982:1 Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions
+    at <anonymous>:1:4
+(anonymous) @ VM1982:1
+t2 + 333n;
+9007199254741331n
+var h = BigInt("543646456435353563645624767");
+undefined
+h;
+543646456435353563645624767n
+h + BigInt("645645646456");
+543646456435354209291271223n
+var q = Symbol();
+undefined
+typeof q;
+'symbol'
+q;
+Symbol()
+q == Symbol();
+false
+var a = 10;
+undefined
+var arr  = [10,20,30,40,50,60];
+undefined
+typeof arr;
+'object'
+class Q{
+    
+}
+undefined
+typeof Q;
+'function'
+arr;
+(6) [10, 20, 30, 40, 50, 60]
+arr.push(10000);
+7
+arr;
+(7) [10, 20, 30, 40, 50, 60, 10000]
+var g= arr;
+undefined
+g[0] =11111;
+11111
+g;
+(7) [11111, 20, 30, 40, 50, 60, 10000]
+arr;
+(7) [11111, 20, 30, 40, 50, 60, 10000]
+var temp = {"shimla":10,"delhi":22};
+undefined
+temp['delhi'];
+22
+var name = "AMIT";
+undefined
+typeof name;
+'string'
+var arr  = [10,20,30,40,50,60];
+undefined
+typeof arr;
+'object'
+arr instanceof Array;
+true
+typeof Array;
+'function'
+arr instanceof Object;
+true
+name;
+'AMIT'
+typeof name;
+'string'
+name.toUpperCase();
+'AMIT'
+a=10;
+10
+typeof a;
+'number'
+var e = new Number(100);
+undefined
+typeof e;
+'object'
+var name= "Amit";
+undefined
+typeof name;
+'string'
+var name2 = new String("Amit");
+undefined
+name;
+'Amit'
+name2;
+String {'Amit'}
+typeof name2;
+'object'
