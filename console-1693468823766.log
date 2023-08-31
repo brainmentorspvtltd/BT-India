@@ -1,0 +1,76 @@
+function show(){}
+undefined
+var t = 100;
+var e = function(){
+    console.log('Anonymous Fn ' ); // Function Expression
+}
+undefined
+typeof t;
+'number'
+typeof e;
+'function'
+e();
+VM204:3 Anonymous Fn 
+undefined
+function Calc(){
+    var add = function(x,y){
+        return x + y;
+    }
+    var sub = function(x,y){
+        return x - y;
+    }
+    return [add, sub];
+}
+
+undefined
+function Calc(z){
+    var e = 1000;
+    var add = function(x,y){
+        return x + y + z;
+    }
+    var sub = function(x,y){
+        return x - y;
+    }
+    return [add, sub];
+}
+
+undefined
+var e = Calc();
+undefined
+e;
+(2) [ƒ, ƒ]
+e[0];
+ƒ (x,y){
+        return x + y + z;
+    }
+var e = Calc(99);
+undefined
+e[0];
+ƒ (x,y){
+        return x + y + z;
+    }
+e[0](10,20);
+129
+console.dir(e[0]);
+VM709:1 ƒ add(x,y)arguments: nullcaller: nulllength: 2name: "add"prototype: {constructor: ƒ}[[FunctionLocation]]: VM522:3[[Prototype]]: ƒ ()[[Scopes]]: Scopes[2]0: Closure (Calc) {z: 99}1: Global {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
+var count = 0;
+function counter(){
+        count++;
+    return count;
+}
+undefined
+counter();
+1
+counter();
+2
+counter();
+3
+counter();
+4
+window.count;
+4
+count = "Amit";
+'Amit'
+counter();
+NaN

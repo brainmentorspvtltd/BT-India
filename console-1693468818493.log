@@ -1,0 +1,154 @@
+function show(){
+    // var x;
+    console.log(x); // undefined
+    var x = 30;
+    console.log(x); // 30
+    if(10>2){
+        //x = 10
+        var x = 10;
+        console.log(x); // 10
+    }
+    var x = 20;
+    console.log(x); //20
+    
+}
+undefined
+show();
+VM166:3 undefined
+VM166:5 30
+VM166:9 10
+VM166:12 20
+undefined
+function show(){
+    // var x;
+    console.log(x); // Error
+    let x = 30;
+    console.log(x); // 30
+    if(10>2){
+        //x = 10
+        let x = 10;
+        console.log(x); // 10
+    }
+    let x = 20;
+    console.log(x); //20
+    
+}
+VM210:11 Uncaught SyntaxError: Identifier 'x' has already been declared
+function show(){
+    // var x;
+    console.log(x); // Error
+    let x = 30;
+    console.log(x); // 30
+    if(10>2){
+        //x = 10
+        let x = 10;
+        console.log(x); // 10
+    }
+   // let x = 20;
+    console.log(x); //20
+    
+}
+undefined
+show();
+VM214:3 Uncaught ReferenceError: Cannot access 'x' before initialization
+    at show (<anonymous>:3:17)
+    at <anonymous>:1:1
+show @ VM214:3
+(anonymous) @ VM236:1
+var g =1000;
+undefined
+window.g;
+1000
+let g2 = 1000;
+undefined
+window.g2;
+undefined
+function show(){
+    // var x;
+   // console.log(x); // Error
+    let x = 30;
+    console.log(x); // 30
+    if(10>2){
+        console.log(x);
+        //x = 10
+        let x = 10;
+        console.log(x); // 10
+    }
+   // let x = 20;
+    console.log(x); //20
+    
+}
+undefined
+show();
+VM395:5 30
+VM395:7 Uncaught ReferenceError: Cannot access 'x' before initialization
+    at show (<anonymous>:7:21)
+    at <anonymous>:1:1
+show @ VM395:7
+(anonymous) @ VM416:1
+function show(){
+    // var x;
+   // console.log(x); // Error
+    let x = 30;
+    console.log(x); // 30
+    if(10>2){
+        //console.log(x);
+        //x = 10
+        let x2 = 10;
+        console.log(x2, x); // 10
+    }
+   // let x = 20;
+    console.log(x); //20
+    
+}
+undefined
+show();
+VM452:5 30
+VM452:10 10 30
+VM452:13 30
+undefined
+function show(){
+    // var x;
+   // console.log(x); // Error
+    let x = 30;
+    console.log(x2); 
+    if(10>2){
+        //console.log(x);
+        //x = 10
+        let x2 = 10;
+        console.log(x2, x); 
+    }
+   // let x = 20;
+    console.log(x); //20
+    
+}
+undefined
+show();
+VM516:5 Uncaught ReferenceError: x2 is not defined
+    at show (<anonymous>:5:17)
+    at <anonymous>:1:1
+show @ VM516:5
+(anonymous) @ VM555:1
+function show(){
+    // var x;
+    console.log(x); // Error
+    let x = 30;
+    console.log(x); // 30
+    if(10>2){
+        //x = 10
+        let x = 10;
+        console.log(x); // 10
+    }
+    let x = 20;
+    console.log(x); //20
+    
+}
+VM588:11 Uncaught SyntaxError: Identifier 'x' has already been declared
+10 === 10
+true
+10 == 10
+true
+10 == "10"
+true
+10 === "10"
+false

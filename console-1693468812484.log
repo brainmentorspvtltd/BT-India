@@ -1,0 +1,342 @@
+function show(){
+    console.log("I am Show ");
+}
+undefined
+typeof show;
+'function'
+show();
+VM115:2 I am Show 
+undefined
+function show(){
+    return 100;
+}
+undefined
+show();
+100
+function show(){
+    return 100,200,300;
+}
+undefined
+show();
+300
+function show(){
+    return [100,200,300];
+}
+undefined
+show();
+(3) [100, 200, 300]
+add(); 
+function add(){
+    console.log("I am the add ");
+}
+VM377:3 I am the add 
+undefined
+window;
+Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+typeof window;
+'object'
+window instanceof Window;
+true
+typeof Window;
+'function'
+this;
+Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+window == this;
+true
+window.add;
+ƒ add(){
+    console.log("I am the add ");
+}
+add;
+ƒ add(){
+    console.log("I am the add ");
+}
+add(10,20);
+VM377:3 I am the add 
+undefined
+add();
+VM377:3 I am the add 
+undefined
+add([10,20,30], "ten",true, 90);
+VM377:3 I am the add 
+undefined
+console.dir(add);
+VM835:1 ƒ add()arguments: nullcaller: nulllength: 0name: "add"prototype: {constructor: ƒ}[[FunctionLocation]]: VM377:2[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1]
+undefined
+add;
+ƒ add(){
+    console.log("I am the add ");
+}
+add(); 
+function add(){
+    console.log("I am the add ", arguments.length);
+}
+VM947:3 I am the add  0
+undefined
+add();
+VM947:3 I am the add  0
+undefined
+add(1,2);
+VM947:3 I am the add  2
+undefined
+add(1,2,3,4,5);
+VM947:3 I am the add  5
+undefined
+function add(){
+    console.log('Add ', arguments.length);
+}
+undefined
+add();
+VM1224:2 Add  0
+undefined
+add(10,20);
+VM1224:2 Add  2
+undefined
+add(10,20,30);
+VM1224:2 Add  3
+undefined
+function add(){
+   // console.log('Add ', arguments.length);
+    var sum = 0;
+    for(var i = 0; i<arguments.length; i++){
+        sum = sum + arguments[i];
+    }
+    return sum;
+}
+undefined
+add();
+0
+add(1,2);
+3
+add(1,"2");
+'12'
+add(1,"2",3);
+'123'
+add(1,2,"3");
+'33'
+function add(){
+   // console.log('Add ', arguments.length);
+    var sum = 0;
+    for(var i = 0; i<arguments.length; i++){
+        sum = sum + parseInt(arguments[i]);
+    }
+    return sum;
+}
+undefined
+add(1,2,"3");
+6
+add(1,2,"three");
+NaN
+function add(){
+   // console.log('Add ', arguments.length);
+    var sum = 0;
+    for(var i = 0; i<arguments.length; i++){
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+    }
+    return sum;
+}
+undefined
+add(1,2,"three");
+3
+function four(){
+    return "4";
+}
+undefined
+function five(){
+    return 5;
+}
+undefined
+function add(){
+   // console.log('Add ', arguments.length);
+    var sum = 0;
+    for(var i = 0; i<arguments.length; i++){
+        if(typeof arguments[i]=='function'){
+            arguments[i] = arguments[i]();
+        }
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+    }
+    return sum;
+}
+undefined
+add(10,20,four,five);
+39
+function add(){
+   // console.log('Add ', arguments.length);
+    var sum = 0;
+    for(var i = 0; i<arguments.length; i++){
+        if(arguments[i] instanceof Array){
+            for(var j=0; j<arguments[i].length; j++){
+                sum = sum + (isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]));
+        }
+            continue;
+        }
+        else 
+        if(typeof arguments[i]=='function'){
+            arguments[i] = arguments[i]();
+        }
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+    }
+    return sum;
+}
+undefined
+add(1,2,four, five, [1,"2",3,"four"],"five");
+18
+function add(){
+   // console.log('Add ', arguments.length);
+    var sum = 0;
+    for(var i = 0; i<arguments.length; i++){
+        if(arguments[i] instanceof Array){
+            for(var j=0; j<arguments[i].length; j++){
+                sum = sum + (isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]));
+        }
+            continue;
+        }
+        else 
+        if(typeof arguments[i]=='function'){
+            arguments[i] = arguments[i]();
+        }
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+    }
+    return sum;
+}
+undefined
+function add(){
+   // console.log('Add ', arguments.length);
+    var sum = 0;
+    for(var i = 0; i<arguments.length; i++){
+        if(arguments[i] instanceof Array){
+            for(var j=0; j<arguments[i].length; j++){
+                sum = sum + (isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]));
+        }
+            continue;
+        }
+        else 
+        if(typeof arguments[i]=='function'){
+            arguments[i] = arguments[i]();
+        }
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+    }
+    return sum;
+}
+undefined
+function add(...args){
+   // console.log('Add ', arguments.length);
+    var sum = 0;
+    for(var i = 0; i<args.length; i++){
+        if(args[i] instanceof Array){
+            for(var j=0; j<args[i].length; j++){
+                sum = sum + (isNaN(parseInt(args[i][j]))?0:parseInt(args[i][j]));
+        }
+            continue;
+        }
+        else 
+        if(typeof args[i]=='function'){
+            args[i] = args[i]();
+        }
+        sum = sum + (isNaN(parseInt(args[i]))?0:parseInt(args[i]));
+    }
+    return sum;
+}
+undefined
+add(10,20,four,five);
+39
+function add(...args){
+    console.log(typeof args, typeof arguments);
+    console.log('Instanceof ' , args instanceof Array);
+    console.log('Instanceof ', arguments instanceof Array);
+   // console.log('Add ', arguments.length);
+    var sum = 0;
+    for(var i = 0; i<args.length; i++){
+        if(args[i] instanceof Array){
+            for(var j=0; j<args[i].length; j++){
+                sum = sum + (isNaN(parseInt(args[i][j]))?0:parseInt(args[i][j]));
+        }
+            continue;
+        }
+        else 
+        if(typeof args[i]=='function'){
+            args[i] = args[i]();
+        }
+        sum = sum + (isNaN(parseInt(args[i]))?0:parseInt(args[i]));
+    }
+    return sum;
+}
+undefined
+add(1,"2",3);
+VM2356:2 object object
+VM2356:3 Instanceof  true
+VM2356:4 Instanceof  false
+6
+function test(x,y,...a){
+console.log(x,y,a);
+}
+undefined
+test(10,20,90,100,200);
+VM2483:2 10 20 (3) [90, 100, 200]
+undefined
+function test(x,y,...a,k){
+console.log(x,y,a);
+}
+VM2569:1 Uncaught SyntaxError: Rest parameter must be last formal parameter
+function test(x,y,...a,...e){
+console.log(x,y,a);
+}
+VM2577:1 Uncaught SyntaxError: Rest parameter must be last formal parameter
+function add(...args){
+    console.log(typeof args, typeof arguments);
+    console.log('Instanceof ' , args instanceof Array);
+    console.log('Instanceof ', arguments instanceof Array);
+   // console.log('Add ', arguments.length);
+    var sum = 0;
+    for(let i = 0; i<args.length; i++){
+        if(args[i] instanceof Array){
+            for(let j=0; j<args[i].length; j++){
+                sum = sum + (isNaN(parseInt(args[i][j]))?0:parseInt(args[i][j]));
+        }
+            continue;
+        }
+        else 
+        if(typeof args[i]=='function'){
+            args[i] = args[i]();
+        }
+        sum = sum + (isNaN(parseInt(args[i]))?0:parseInt(args[i]));
+    }
+    return sum;
+}
+undefined
+const MAX = 100;
+undefined
+MAX++;
+VM2657:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:4
+(anonymous) @ VM2657:1
+const ARR2 = [10,20,30];
+undefined
+ARR2.push(199);
+4
+ARR2 = [];
+VM2800:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:6
+(anonymous) @ VM2800:1
+function add(...args){
+    console.log(typeof args, typeof arguments);
+    console.log('Instanceof ' , args instanceof Array);
+    console.log('Instanceof ', arguments instanceof Array);
+   // console.log('Add ', arguments.length);
+    var sum = 0;
+    for(let i = 0; i<args.length; i++){
+        if(args[i] instanceof Array){
+            for(let j=0; j<args[i].length; j++){
+                sum = sum + (isNaN(parseInt(args[i][j]))?0:parseInt(args[i][j]));
+        }
+            continue;
+        }
+        else 
+        if(typeof args[i]==='function'){
+            args[i] = args[i]();
+        }
+        sum = sum + (isNaN(parseInt(args[i]))?0:parseInt(args[i]));
+    }
+    return sum;
+}
+undefined

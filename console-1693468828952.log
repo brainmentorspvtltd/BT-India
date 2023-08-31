@@ -1,0 +1,86 @@
+function init(){
+var count = 0;
+return function counter(){
+        count++;
+    return count;
+}
+}
+undefined
+var fn = init();
+undefined
+fn();
+1
+fn();
+2
+fn();
+3
+fn();
+4
+fn();
+5
+count;
+VM106:1 Uncaught ReferenceError: count is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM106:1
+console.dir(fn);
+VM147:1 ƒ counter()arguments: nullcaller: nulllength: 0name: "counter"prototype: {constructor: ƒ}[[FunctionLocation]]: VM40:3[[Prototype]]: ƒ ()[[Scopes]]: Scopes[2]0: Closure (init) {count: 5}1: Global {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
+var fn = init();
+undefined
+fn();
+1
+fn();
+2
+fn();
+3
+var t = (function (){
+var count = 0;
+return function counter(){
+        count++;
+    return count;
+}
+})();
+undefined
+t();
+1
+t();
+2
+t();
+3
+t();
+4
+function output(){
+    (function(){
+    for(var i = 1; i<=5; i++){
+        console.log('I is ', i);
+    }
+    })();
+}
+undefined
+output();
+VM380:4 I is  1
+VM380:4 I is  2
+VM380:4 I is  3
+VM380:4 I is  4
+VM380:4 I is  5
+undefined
+function output(){
+    (function(){
+    for(var i = 1; i<=5; i++){
+        console.log('I is ', i);
+    }
+    })();
+    console.log(i);
+}
+undefined
+output();
+VM426:4 I is  1
+VM426:4 I is  2
+VM426:4 I is  3
+VM426:4 I is  4
+VM426:4 I is  5
+VM426:7 Uncaught ReferenceError: i is not defined
+    at output (<anonymous>:7:17)
+    at <anonymous>:1:1
+output @ VM426:7
+(anonymous) @ VM431:1
