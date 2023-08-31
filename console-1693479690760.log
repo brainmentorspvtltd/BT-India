@@ -1,0 +1,65 @@
+function cube(num){
+    for(let i = 1; i<=10000; i++){
+        for(let j = 1; j<=10000; j++){
+            
+        }
+    }
+    return num**3;
+}
+undefined
+cube(5);
+125
+cube(5);
+125
+var cache = {};
+
+undefined
+function cube(num){
+    if(cache[num]){
+        return cache[num];
+    }
+    for(let i = 1; i<=10000; i++){
+        for(let j = 1; j<=10000; j++){
+             
+        }
+    }
+    cache[num] = num **3;
+    return cache[num];
+}
+undefined
+cache;
+{}
+cube(5);
+125
+cache;
+{5: 125}
+cube(5);
+125
+cube(20);
+8000
+cache;
+{5: 125, 20: 8000}
+cube(20);
+8000
+typeof cache;
+'object'
+cache;
+{5: 125, 20: 8000}
+cache[5];
+125
+delete cache[5];
+true
+cache;
+{20: 8000}
+function makeSuperHero(name){
+        return  function(power){
+            return function(limitations){
+                console.log(name + " " +power + " "+limitations);
+            }
+        }
+}
+
+undefined
+makeSuperHero('IronMan')('Fast Fly')('Fuel');
+VM756:4 IronMan Fast Fly Fuel
+undefined

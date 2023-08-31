@@ -1,0 +1,105 @@
+var obj = {
+    arr:[10,15,17,20,25,27,30],
+    even:[],
+    odd:[],
+    evenOdd(){
+        this.arr.forEach(function(e)=>{
+            if(e%2==0){
+                this.even.push(e);
+            }
+            else{
+                this.odd.push(e);
+            }
+        })
+    }
+}
+VM292:6 Uncaught SyntaxError: Unexpected token '=>'
+var obj = {
+    arr:[10,15,17,20,25,27,30],
+    even:[],
+    odd:[],
+    evenOdd(){
+        this.arr.forEach(function(e){
+            if(e%2==0){
+                this.even.push(e);
+            }
+            else{
+                this.odd.push(e);
+            }
+        })
+    }
+}
+undefined
+obj.evenOdd();
+VM296:8 Uncaught TypeError: Cannot read properties of undefined (reading 'push')
+    at <anonymous>:8:27
+    at Array.forEach (<anonymous>)
+    at Object.evenOdd (<anonymous>:6:18)
+    at <anonymous>:1:5
+(anonymous) @ VM296:8
+evenOdd @ VM296:6
+(anonymous) @ VM323:1
+var obj = {
+    arr:[10,15,17,20,25,27,30],
+    even:[],
+    odd:[],
+    evenOdd(){
+        var that = this;
+        this.arr.forEach(function(e){
+            if(e%2==0){
+                that.even.push(e);
+            }
+            else{
+                that.odd.push(e);
+            }
+        })
+    }
+}
+undefined
+obj.evenOdd();
+undefined
+obj.even;
+(3) [10, 20, 30]
+obj.odd;
+(4) [15, 17, 25, 27]
+var obj = {
+    arr:[10,15,17,20,25,27,30],
+    even:[],
+    odd:[],
+    evenOdd(){
+        
+        this.arr.forEach((e)=>{
+            if(e%2==0){
+                this.even.push(e);
+            }
+            else{
+                this.odd.push(e);
+            }
+        })
+    }
+}
+undefined
+obj.evenOdd();
+undefined
+function show(){
+    console.log('What is this ', this);
+}
+undefined
+show();
+VM595:2 What is this  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
+const show2 = ()=>console.log('What is this', this);
+undefined
+show2();
+VM754:1 What is this Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
+const e = new show();
+VM595:2 What is this  show {}
+undefined
+show();
+VM595:2 What is this  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
+var e2 = new show2();
+VM905:1 Uncaught TypeError: show2 is not a constructor
+    at <anonymous>:1:10
+(anonymous) @ VM905:1

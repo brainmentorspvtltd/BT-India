@@ -1,0 +1,127 @@
+var e = {id:1001, name:'Shyam'};
+undefined
+typeof e;
+'object'
+e instanceof Object;
+true
+function createPerson(id, name, city){
+    var person = {};
+    person.id = id;
+    person.name = name;
+    person.city = city;
+    return person;
+}
+undefined
+var tom = new Person(101, 'Tom', 'Delhi');
+VM416:1 Uncaught ReferenceError: Person is not defined
+    at <anonymous>:1:11
+(anonymous) @ VM416:1
+var tom = createPerson(101, 'Tom', 'Delhi');
+undefined
+tom;
+{id: 101, name: 'Tom', city: 'Delhi'}
+tom instanceof createPerson;
+false
+tom instanceof Object;
+true
+function Person(id, name , city){
+    this.id = id;
+    this.name = name;
+    this.city = city;
+}
+var tim =new Person(1001, 'tim', 'Delhi');
+undefined
+tim;
+Person {id: 1001, name: 'tim', city: 'Delhi'}
+tom;
+{id: 101, name: 'Tom', city: 'Delhi'}
+tim instanceof Person;
+true
+tom instanceof createPerson;
+false
+tim instanceof Object;
+true
+tom instanceof Object;
+true
+Person;
+ƒ Person(id, name , city){
+    this.id = id;
+    this.name = name;
+    this.city = city;
+}
+console.dir(Person);
+VM1129:1 ƒ Person(id, name , city)arguments: nullcaller: nulllength: 3name: "Person"prototype: {constructor: ƒ}[[FunctionLocation]]: VM824:1[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1]
+undefined
+function Person(id, name , city){
+    this.id = id;
+    this.name = name;
+    this.city = city;
+    this.print = function(){
+        console.log(this.id, this.name, this.city);
+    }
+}
+var tim =new Person(1001, 'tim', 'Delhi');
+undefined
+tim;
+Person {id: 1001, name: 'tim', city: 'Delhi', print: ƒ}
+var kim =new Person(1002, 'kim', 'New Delhi');
+undefined
+kim;
+Person {id: 1002, name: 'kim', city: 'New Delhi', print: ƒ}
+tim.print();
+VM1286:6 1001 'tim' 'Delhi'
+undefined
+kim.print();
+VM1286:6 1002 'kim' 'New Delhi'
+undefined
+Person.prototype;
+{constructor: ƒ}
+console.dir(Person);
+VM1461:1 ƒ Person(id, name , city)arguments: nullcaller: nulllength: 3name: "Person"prototype: {constructor: ƒ}[[FunctionLocation]]: VM1286:1[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1]
+undefined
+Person.prototype;
+{constructor: ƒ}
+typeof Person.prototype;
+'object'
+Person.prototype.show = function(){
+    console.log(this.id, this.name , this.city);
+}
+ƒ (){
+    console.log(this.id, this.name , this.city);
+}
+Person.prototype;
+{show: ƒ, constructor: ƒ}
+Person;
+ƒ Person(id, name , city){
+    this.id = id;
+    this.name = name;
+    this.city = city;
+    this.print = function(){
+        console.log(this.id, this.name, this.city);
+    }
+}
+var tim = new Person(1001, 'Tim', 'Delhi');
+undefined
+tim;
+Person {id: 1001, name: 'Tim', city: 'Delhi', print: ƒ}
+tim.id;
+1001
+tim.print();
+VM1286:6 1001 'Tim' 'Delhi'
+undefined
+tim.show();
+VM1693:2 1001 'Tim' 'Delhi'
+undefined
+kim.show();
+VM1693:2 1002 'kim' 'New Delhi'
+undefined
+Person.prototype;
+{show: ƒ, constructor: ƒ}
+tim.__proto__;
+{show: ƒ, constructor: ƒ}
+tim.__proto__ === Person.prototype;
+true
+tim.__proto__.__proto__;
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+tim.__proto__.__proto__ == Object.prototype;
+true
