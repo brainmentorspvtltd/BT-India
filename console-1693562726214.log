@@ -1,0 +1,443 @@
+console.log("Start "); // Sync
+setTimeout(function(){
+    console.log("Doing some Stuff");
+},2000);
+console.log("End ");// Sync
+VM249:1 Start 
+VM249:5 End 
+undefined
+VM249:3 Doing some Stuff
+console.log("Start "); // Sync
+var t = doWork(); 
+console.log("End ", t);// Sync
+function doWork(){
+    // Non Blocking (Async)
+    setTimeout(function(){
+    console.log("Doing some Stuff");
+    return "I am Done ";
+},2000);
+    // return undefined;
+}
+VM396:1 Start 
+VM396:3 End  undefined
+undefined
+VM396:7 Doing some Stuff
+console.log("Start "); // Sync
+var t = doWork(); 
+
+function doWork(){
+    // Non Blocking (Async)
+    setTimeout(function(){
+    console.log("Doing some Stuff");
+    return "I am Done ";
+},2000);
+    // return undefined;
+}
+console.log("End ", t);// Sync
+VM405:1 Start 
+VM405:12 End  undefined
+undefined
+VM405:7 Doing some Stuff
+console.log("Start "); // Sync
+
+
+function doWork(){
+    // Non Blocking (Async)
+    setTimeout(function(){
+    console.log("Doing some Stuff");
+    return "I am Done ";
+},2000);
+    // return undefined;
+}
+var t = doWork(); 
+console.log("End ", t);// Sync
+VM410:1 Start 
+VM410:13 End  undefined
+undefined
+VM410:7 Doing some Stuff
+t;
+undefined
+function giveMeResult(result){
+    console.log('Get the Result ', result);
+}
+console.log("Start "); // Sync
+
+
+function doWork(fn){
+    // Non Blocking (Async)
+    setTimeout(function(){
+    console.log("Doing some Stuff");
+    fn( "I am Done ");
+},2000);
+    // return undefined;
+}
+//var t = doWork(); 
+doWork(giveMeResult);
+console.log("End ", t);// Sync
+VM569:4 Start 
+VM569:17 End  undefined
+undefined
+VM569:10 Doing some Stuff
+VM569:2 Get the Result  I am Done 
+function giveMeResult(result){
+    console.log('Get the Result ', result);
+}
+console.log("Start "); // Sync
+
+
+function doWork(fn){
+    // Non Blocking (Async)
+    setTimeout(function(){
+    console.log("Doing some Stuff");
+    fn( "I am Done ");
+},2000);
+    // return undefined;
+}
+//var t = doWork(); 
+doWork(giveMeResult);
+console.log("End ");// Sync
+VM582:4 Start 
+VM582:17 End 
+undefined
+VM582:10 Doing some Stuff
+VM582:2 Get the Result  I am Done 
+function giveMeResult(result){
+    console.log('Get the Result ', result);
+}
+function failResult(err){
+    console.log('Error is ', err);
+}
+console.log("Start "); // Sync
+
+
+function doWork(successFn, failFn){
+    // Non Blocking (Async)
+    setTimeout(function(){
+    console.log("Doing some Stuff");
+    successFn( "I am Done ");
+},2000);
+    // return undefined;
+}
+//var t = doWork(); 
+doWork(giveMeResult, failResult);
+console.log("End ");// Sync
+VM683:7 Start 
+VM683:20 End 
+undefined
+VM683:13 Doing some Stuff
+VM683:2 Get the Result  I am Done 
+function giveMeResult(result){
+    console.log('Get the Result ', result);
+}
+function failResult(err){
+    console.log('Error is ', err);
+}
+console.log("Start "); // Sync
+
+
+function doWork(successFn, failFn){
+    // Non Blocking (Async)
+    setTimeout(function(){
+    console.log("Doing some Stuff");
+        if(10>2){
+    successFn( "I am Done ");
+        }
+        else{
+            failFn('Failed....');
+        }
+},2000);
+    // return undefined;
+}
+//var t = doWork(); 
+doWork(giveMeResult, failResult);
+console.log("End ");// Sync
+VM727:7 Start 
+VM727:25 End 
+undefined
+VM727:13 Doing some Stuff
+VM727:2 Get the Result  I am Done 
+function giveMeResult(result){
+    console.log('Get the Result ', result);
+}
+function failResult(err){
+    console.log('Error is ', err);
+}
+console.log("Start "); // Sync
+
+
+function doWork(successFn, failFn){
+    // Non Blocking (Async)
+    setTimeout(function(){
+    console.log("Doing some Stuff");
+        if(10>20){
+    successFn( "I am Done ");
+        }
+        else{
+            failFn('Failed....');
+        }
+},2000);
+    // return undefined;
+}
+//var t = doWork(); 
+doWork(giveMeResult, failResult);
+console.log("End ");// Sync
+VM730:7 Start 
+VM730:25 End 
+undefined
+VM730:13 Doing some Stuff
+VM730:5 Error is  Failed....
+
+console.log("Start "); // Sync
+
+
+function doWork(){
+    const p = new Promise((resolve, reject)=>{
+        // Async Code
+        setTimeout(function(){
+    console.log("Doing some Stuff");
+            resolve("I am Done ");
+            // reject
+       
+},2000);
+    });
+    return p;
+    
+   
+}
+
+console.log("End ");// Sync
+VM890:2 Start 
+VM890:20 End 
+undefined
+
+console.log("Start "); // Sync
+
+
+function doWork(){
+    const p = new Promise((resolve, reject)=>{
+        // Async Code
+        setTimeout(function(){
+    console.log("Doing some Stuff");
+            resolve("I am Done ");
+            // reject
+       
+},2000);
+    });
+    return p;
+    
+   
+}
+var pr = doWork();
+pr.then(result=>{
+    console.log('Result is ', result);
+}).catch(err=>{
+    console.log('Error is ', err);
+});
+console.log("End ");// Sync
+VM1079:2 Start 
+VM1079:25 End 
+undefined
+VM1079:9 Doing some Stuff
+VM1079:21 Result is  I am Done 
+
+console.log("Start "); // Sync
+
+
+function doWork(){
+    const p = new Promise((resolve, reject)=>{
+        // Async Code
+        setTimeout(function(){
+    console.log("Doing some Stuff");
+            resolve("I am Done ");
+            // reject
+       
+},2000);
+    });
+    return p;
+    
+   
+}
+var pr = doWork();
+console.log('Pr is ' , pr);
+pr.then(result=>{
+    console.log('Result is ', result);
+}).catch(err=>{
+    console.log('Error is ', err);
+});
+console.log("End ");// Sync
+VM1132:2 Start 
+VM1132:20 Pr is  Promise {<pending>}
+VM1132:26 End 
+undefined
+VM1132:9 Doing some Stuff
+VM1132:22 Result is  I am Done 
+
+console.log("Start "); // Sync
+
+
+function doWork(){
+    const p = new Promise((resolve, reject)=>{
+        // Async Code
+        setTimeout(function(){
+    console.log("Doing some Stuff");
+            //resolve("I am Done ");
+             reject("Error::: ");
+       
+},2000);
+    });
+    return p;
+    
+   
+}
+var pr = doWork();
+console.log('Pr is ' , pr);
+pr.then(result=>{
+    console.log('Result is ', result);
+}).catch(err=>{
+    console.log('Error is ', err);
+});
+console.log("End ");// Sync
+VM1154:2 Start 
+VM1154:20 Pr is  Promise {<pending>}
+VM1154:26 End 
+undefined
+VM1154:9 Doing some Stuff
+VM1154:24 Error is  Error::: 
+pr;
+Promise {<rejected>: 'Error::: '}
+function cube(num, time){
+    const p = new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+        resolve(num**3);
+    }, time);
+    });
+    return p;
+    
+}
+undefined
+const p =cube(3);
+p.then(d=>console.log(d)).catch(e=>console.log(e));
+Promise {<pending>}
+VM1560:2 27
+const p =cube(3,5000);
+p.then(d=>console.log(d)).catch(e=>console.log(e));
+Promise {<pending>}
+VM1576:2 27
+const p = Promise.all(cube(2,3000), cube(3,1000), cube(5,5000));
+p.then(d=>console.log(d)).catch(e=>console.log(e));
+VM1947:2 TypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))
+    at Function.all (<anonymous>)
+    at <anonymous>:1:19
+Promise {<fulfilled>: undefined}
+const p = Promise.all([cube(2,3000), cube(3,1000), cube(5,5000)]);
+p.then(d=>console.log(d)).catch(e=>console.log(e));
+Promise {<pending>}
+VM1954:2 (3) [8, 27, 125]
+
+const p = Promise.all([cube(2,3000), cube(3,1000), cube(5,5000)]);
+p.then(d=>console.log(d)).catch(e=>console.log(e));
+Promise {<pending>}
+VM1987:3 (3) [8, 27, 125]
+function cube(num, time){
+    const p = new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            if(num>5){
+                reject("Fail "+num);
+            }
+            else{
+        resolve(num**3);
+            }
+    }, time);
+    });
+    return p;
+    
+}
+undefined
+
+const p = Promise.all([cube(2,3000), cube(3,1000), cube(15,5000)]);
+p.then(d=>console.log(d)).catch(e=>console.log(e));
+Promise {<pending>}
+VM2049:3 Fail 15
+
+const p = Promise.allSettled([cube(2,3000), cube(3,1000), cube(15,5000)]);
+p.then(d=>console.log(d)).catch(e=>console.log(e));
+Promise {<pending>}
+VM2063:3 (3) [{…}, {…}, {…}]0: {status: 'fulfilled', value: 8}1: {status: 'fulfilled', value: 27}2: {status: 'rejected', reason: 'Fail 15'}length: 3[[Prototype]]: Array(0)
+
+const p = Promise.any([cube(2,3000), cube(3,1000), cube(15,5000)]);
+p.then(d=>console.log(d)).catch(e=>console.log(e));
+Promise {<pending>}
+VM2071:3 27
+function cube(num, time){
+    const p = new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            if(num>5){
+                reject("Fail "+num);
+            }
+            else{
+        resolve(num**3);
+            }
+    }, time);
+    });
+    return p;
+    
+}
+undefined
+
+const p = Promise.any([cube(20,3000), cube(30,1000), cube(2,5000)]);
+p.then(d=>console.log(d)).catch(e=>console.log(e));
+Promise {<pending>}
+VM2097:3 8
+
+const p = Promise.any([cube(20,3000), cube(3,1000), cube(2,5000)]);
+p.then(d=>console.log(d)).catch(e=>console.log(e));
+Promise {<pending>}
+VM2102:3 27
+
+const p = Promise.any([cube(20,3000), cube(30,1000), cube(22,5000)]);
+p.then(d=>console.log(d)).catch(e=>console.log(e));
+Promise {<pending>}
+VM2112:3 AggregateError: All promises were rejected
+
+const p = Promise.race([cube(20,3000), cube(30,1000), cube(22,5000)]);
+p.then(d=>console.log(d)).catch(e=>console.log(e));
+Promise {<pending>}
+VM2121:3 Fail 30
+async  function total(){
+    try{
+    return await cube(3,2000) + await cube(4, 3000) + await cube(2, 5000);
+    }
+    catch(err){
+        console.log('Error is ', err);
+    }
+}
+undefined
+total();
+Promise {<pending>}
+await total();
+99
+console.log(await total());
+VM2410:1 99
+undefined
+console.log(await total());
+var w = 100;
+undefined
+w;
+100
+VM2414:1 99
+undefined
+async  function total(){
+    console.log('Total Call ');
+    try{
+    const r =  await cube(3,2000) + await cube(4, 3000) + await cube(2, 5000);
+        console.log('R is ', r);
+    }
+    catch(err){
+        console.log('Error is ', err);
+    }
+}
+undefined
+total();
+VM2566:2 Total Call 
+Promise {<pending>}
+VM2566:5 R is  99
