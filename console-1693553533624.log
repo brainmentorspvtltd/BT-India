@@ -1,0 +1,171 @@
+function Product(){
+    //var product = {}; // Object Literal (Generic)
+    console.log('Product Object is ', this);
+    // this - keyword (Current Calling object reference)
+}
+var phone = new Product();
+VM317:3 Product Object is  Product {}
+undefined
+Product(); 
+VM317:3 Product Object is  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
+Product(); // window.Product() // Default Binding
+VM317:3 Product Object is  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
+var p = new Product(); // Explicit Binding
+VM317:3 Product Object is  Product {}
+undefined
+function Product(id, name, price, qty){
+    this.id = id;
+    this.name = name;
+    this.price = price;
+    this.qty = qty;
+    //var product = {}; // Object Literal (Generic)
+   // console.log('Product Object is ', this);
+    // this - keyword (Current Calling object reference)
+}
+
+undefined
+var p = new Product();
+undefined
+p;
+Product {id: undefined, name: undefined, price: undefined, qty: undefined}
+var p = new Product(1001, "A",999,10);
+undefined
+p;
+Product {id: 1001, name: 'A', price: 999, qty: 10}
+typeof p;
+'object'
+p instanceof Product;
+true
+p instanceof Object;
+true
+function Product(id, name, price, qty){
+    this.id = id;
+    this.name = name;
+    this.price = price;
+    this.qty = qty;
+    this.showProduct = function(){
+        console.log(this.id , this.name , this.price, this.qty);
+    }
+    //var product = {}; // Object Literal (Generic)
+   // console.log('Product Object is ', this);
+    // this - keyword (Current Calling object reference)
+}
+
+undefined
+var p = new Product(1001, "A",999,10);
+undefined
+p.showProduct();
+VM1203:7 1001 'A' 999 10
+undefined
+p;
+Product {id: 1001, name: 'A', price: 999, qty: 10, showProduct: ƒ}
+Product.prototype;
+{constructor: ƒ}
+Product;
+ƒ Product(id, name, price, qty){
+    this.id = id;
+    this.name = name;
+    this.price = price;
+    this.qty = qty;
+    this.showProduct = function(){
+        console.log(this.id , this.name , this.pr…
+typeof Product;
+'function'
+console.dir(Product);
+VM1403:1 ƒ Product(id, name, price, qty)arguments: nullcaller: nulllength: 4name: "Product"prototype: constructor: ƒ Product(id, name, price, qty)[[Prototype]]: Object[[FunctionLocation]]: VM1203:1[[Prototype]]: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()[[FunctionLocation]]: [[Prototype]]: Object[[Scopes]]: Scopes[0][[Scopes]]: Scopes[1]
+undefined
+Product.prototype;
+{constructor: ƒ}
+typeof Product;
+'function'
+typeof Product.prototype;
+'object'
+Product.__proto__;
+ƒ () { [native code] }
+function Product(id, name, price, qty){
+    this.id = id;
+    this.name = name;
+    this.price = price;
+    this.qty = qty;
+    // this.showProduct = function(){
+    //     console.log(this.id , this.name , this.price, this.qty);
+    //}
+    //var product = {}; // Object Literal (Generic)
+   // console.log('Product Object is ', this);
+    // this - keyword (Current Calling object reference)
+}
+Product.prototype.showProduct = function(){
+    console.log(this.id , this.name , this.price, this.qty);
+}
+
+ƒ (){
+    console.log(this.id , this.name , this.price, this.qty);
+}
+Product.prototype;
+{showProduct: ƒ, constructor: ƒ}
+var p = new Product(1001, "A",999,10);
+undefined
+p.id;
+1001
+p.showProduct();
+VM1645:14 1001 'A' 999 10
+undefined
+p.__proto__;
+{showProduct: ƒ, constructor: ƒ}
+p.__proto__.showProduct();
+VM1645:14 undefined undefined undefined undefined
+undefined
+p.showProduct();
+VM1645:14 1001 'A' 999 10
+undefined
+p.__proto__ === Product.prototype;
+true
+p;
+Product {id: 1001, name: 'A', price: 999, qty: 10}
+p.__proto__;
+{showProduct: ƒ, constructor: ƒ}
+p.__proto__.showProduct;
+ƒ (){
+    console.log(this.id , this.name , this.price, this.qty);
+}
+p.showProduct();
+VM1645:14 1001 'A' 999 10
+undefined
+p.__proto__.showProduct.call(p);
+VM1645:14 1001 'A' 999 10
+undefined
+p.showProduct();
+VM1645:14 1001 'A' 999 10
+undefined
+Product.prototype;
+{showProduct: ƒ, constructor: ƒ}
+Product.prototype.showProduct;
+ƒ (){
+    console.log(this.id , this.name , this.price, this.qty);
+}
+Product.prototype.constructor
+ƒ Product(id, name, price, qty){
+    this.id = id;
+    this.name = name;
+    this.price = price;
+    this.qty = qty;
+    // this.showProduct = function(){
+    //     console.log(this.id , this.name , t…
+Product.prototype.constructor === Product;
+true
+Product.prototype.__proto__=== Object.prototype;
+true
+Product.__proto__ === Function.prototype;
+true
+p;
+Product {id: 1001, name: 'A', price: 999, qty: 10}
+p.__proto__;
+{showProduct: ƒ, constructor: ƒ}
+p.__proto__.__proto__;
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+p.__proto__.__proto__.__proto__;
+null
+p.__proto__.__proto__.constructor;
+ƒ Object() { [native code] }

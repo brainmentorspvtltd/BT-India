@@ -1,0 +1,114 @@
+function Person(id, name, age, city){
+    this.id = id;
+    this.name = name;
+    this.age = age;
+    this.city = city;
+}
+function Employee(id, name, age, city,salary, bonus, dept){
+    Person.call(this, id, name, age, city); // Person(id, name, age, city)
+    this.salary = salary;
+    this.bonus = bonus;
+    this.dept = dept;
+}
+var tom = new Employee(1001, 'Tom',22,'Delhi',99999,111,'IT');
+undefined
+tom;
+Employee {id: 1001, name: 'Tom', age: 22, city: 'Delhi', salary: 99999, …}
+function Person(id, name, age, city){
+    this.id = id;
+    this.name = name;
+    this.age = age;
+    this.city = city;
+    console.log("Person Constructor this ", this);
+    // id , name, age, city
+}
+function Employee(id, name, age, city,salary, bonus, dept){
+    console.log('Emp this is ', this); // {}
+    Person.call(this, id, name, age, city); // Person(id, name, age, city)
+    this.salary = salary;
+    this.bonus = bonus;
+    this.dept = dept;
+    console.log('Emp this is ', this);
+}
+var tom = new Employee(1001, 'Tom',22,'Delhi',99999,111,'IT');
+VM750:10 Emp this is  Employee {}
+VM750:6 Person Constructor this  Employee {id: 1001, name: 'Tom', age: 22, city: 'Delhi'}
+VM750:15 Emp this is  Employee {id: 1001, name: 'Tom', age: 22, city: 'Delhi', salary: 99999, …}
+undefined
+function Person(id, name, age, city){
+    this.id = id;
+    this.name = name;
+    this.age = age;
+    this.city = city;
+    console.log("Person Constructor this ", this);
+    // id , name, age, city
+}
+function Employee(id, name, age, city,salary, bonus, dept){
+    console.log('Emp this is ', this); // {}
+    Person.call(this, id, name, age, city); // Person(id, name, age, city)
+    this.salary = salary;
+    this.bonus = bonus;
+    this.dept = dept;
+    console.log('Emp this is ', this);
+}
+var tom = new Employee(1001, 'Tom',22,'Delhi',99999,111,'IT');
+VM756:10 Emp this is  Employee {}
+VM756:6 Person Constructor this  Employee {id: 1001, name: 'Tom', age: 22, city: 'Delhi'}
+VM756:15 Emp this is  Employee {id: 1001, name: 'Tom', age: 22, city: 'Delhi', salary: 99999, …}age: 22bonus: 111city: "Delhi"dept: "IT"id: 1001name: "Tom"salary: 99999[[Prototype]]: Object
+undefined
+Person.prototype.printDetails = function(){
+    console.log(`Id ${this.id} Name ${this.name} Age ${this.age} City ${this.city}`);
+}
+ƒ (){
+    console.log(`Id ${this.id} Name ${this.name} Age ${this.age} City ${this.city}`);
+}
+Employee.prototype.printDetails = function(){
+    Person.prototype.printDetails.call(this);
+    console.log(`Salary ${this.salary} Bonus ${this.bonus} Dept ${this.dept}`);
+}
+ƒ (){
+    Person.prototype.printDetails.call(this);
+    console.log(`Salary ${this.salary} Bonus ${this.bonus} Dept ${this.dept}`);
+}
+tom.printDetails();
+VM969:2 Id 1001 Name Tom Age 22 City Delhi
+VM1214:3 Salary 99999 Bonus 111 Dept IT
+undefined
+Person.prototype.printPerson = function(){
+    console.log(`Id ${this.id} Name ${this.name} Age ${this.age} City ${this.city}`);
+}
+ƒ (){
+    console.log(`Id ${this.id} Name ${this.name} Age ${this.age} City ${this.city}`);
+}
+Employee.prototype.printDetails = function(){
+    //Person.prototype.printDetails.call(this);
+    this.printPerson();
+    console.log(`Salary ${this.salary} Bonus ${this.bonus} Dept ${this.dept}`);
+}
+ƒ (){
+    //Person.prototype.printDetails.call(this);
+    this.printPerson();
+    console.log(`Salary ${this.salary} Bonus ${this.bonus} Dept ${this.dept}`);
+}
+tom.printDetails();
+VM1288:3 Uncaught TypeError: this.printPerson is not a function
+    at Employee.printDetails (<anonymous>:3:10)
+    at <anonymous>:1:5
+Employee.printDetails @ VM1288:3
+(anonymous) @ VM1319:1
+tom;
+Employee {id: 1001, name: 'Tom', age: 22, city: 'Delhi', salary: 99999, …}age: 22bonus: 111city: "Delhi"dept: "IT"id: 1001name: "Tom"salary: 99999[[Prototype]]: ObjectprintDetails: ƒ ()constructor: ƒ Employee(id, name, age, city,salary, bonus, dept)[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+tom.__proto__ === Employee.prototype;
+true
+tom.__proto__.__proto__ === Person.prototype;
+false
+tom.__proto__.__proto__ === Object.prototype;
+true
+tom.__proto__.__proto__ = Person.prototype;
+{printDetails: ƒ, printPerson: ƒ, constructor: ƒ}
+tom.__proto__.__proto__ === Person.prototype;
+true
+tom.printDetails();
+VM1257:2 Id 1001 Name Tom Age 22 City Delhi
+VM1288:4 Salary 99999 Bonus 111 Dept IT
+undefined

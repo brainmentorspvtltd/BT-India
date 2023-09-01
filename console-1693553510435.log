@@ -1,0 +1,75 @@
+class Person{
+    constructor(id, name){
+        this.id = id;
+        this.name = name;
+    }
+    show(){
+        console.log(this.id , this.name);
+    }
+}
+class Employee extends Person{
+    constructor(id, name, dept, salary){
+        super(id, name);
+        this.dept = dept;
+        this.salary = salary;
+    }
+     show(){
+         super.show();
+        console.log(this.dept , this.salary);
+    }
+}
+undefined
+var e = new Employee(1001, 'Tom', 'IT', 9999);
+undefined
+e;
+Employee {id: 1001, name: 'Tom', dept: 'IT', salary: 9999}
+e.show();
+VM372:7 1001 'Tom'
+VM372:18 IT 9999
+undefined
+Employee.prototype;
+Person {constructor: ƒ, show: ƒ}
+Employee.prototype.__proto__;
+{constructor: ƒ, show: ƒ}
+Employee.prototype.__proto__ == Person.prototype;
+true
+typeof Employee;
+'function'
+window.Employee;
+undefined
+//var e; // undefined
+test(); 
+function test(){
+       console.log("Test "); 
+}
+e(); // undefined()
+ //e = function(){
+var e = function(){
+    console.log("E Call ");
+}
+VM933:4 Test 
+VM933:6 Uncaught TypeError: e is not a function
+    at <anonymous>:6:1
+(anonymous) @ VM933:6
+class W{
+    static show(){
+        console.log("I am the Show ");
+    }
+}
+undefined
+W.show();
+VM1020:3 I am the Show 
+undefined
+function Q(){
+    
+}
+undefined
+Q.show = function(){
+    console.log("I am SHow ");
+}
+ƒ (){
+    console.log("I am SHow ");
+}
+Q.show();
+VM1216:2 I am SHow 
+undefined
