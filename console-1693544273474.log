@@ -1,0 +1,68 @@
+// OOJS
+undefined
+var employee = {id:1001,name:'Shyam'};
+undefined
+typeof employee;
+'object'
+employee instanceof Object;
+true
+typeof Object;
+'function'
+employee.dept  = 'IT';
+'IT'
+employee;
+{id: 1001, name: 'Shyam', dept: 'IT'}
+delete employee.dept
+true
+employee;
+{id: 1001, name: 'Shyam'}
+employee.id
+1001
+employee['name']
+'Shyam'
+var dhoni = {name:'MS Dhoni', age:42,50:52,100:11};
+undefined
+typeof dhoni;
+'object'
+dhoni.name;
+'MS Dhoni'
+dhoni.50;
+VM497:1 Uncaught SyntaxError: Unexpected number
+dhoni[50];
+52
+var key = "name";
+undefined
+dhoni.key
+undefined
+dhoni[key];
+'MS Dhoni'
+key = "age";
+'age'
+dhoni[key];
+42
+for(var key in dhoni){
+    console.log(key);
+}
+VM756:2 50
+VM756:2 100
+VM756:2 name
+VM756:2 age
+undefined
+for(var key in dhoni){
+    console.log(key, dhoni[key]);
+}
+VM812:2 50 52
+VM812:2 100 11
+VM812:2 name MS Dhoni
+VM812:2 age 42
+undefined
+dhoni;
+{50: 52, 100: 11, name: 'MS Dhoni', age: 42}
+dhoni.full address = 'New Delhi';
+VM900:1 Uncaught SyntaxError: Unexpected identifier 'address'
+dhoni['full address'] = 'New Delhi';
+'New Delhi'
+dhoni;
+{50: 52, 100: 11, name: 'MS Dhoni', age: 42, full address: 'New Delhi'}
+dhoni['full address'];
+'New Delhi'

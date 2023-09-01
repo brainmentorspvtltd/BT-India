@@ -1,0 +1,16 @@
+10+10
+20
+10 +"Amit"
+'10Amit'
+10+undefined;
+NaN
+10- "Amit";
+NaN
+typeof undefined;
+'undefined'
+t;
+VM171:1 Uncaught ReferenceError: t is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM171:1
+var t;
+undefined

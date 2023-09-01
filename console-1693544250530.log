@@ -1,0 +1,100 @@
+var a;
+undefined
+typeof a;
+'undefined'
+a=10;
+10
+typeof a;
+'number'
+a = 'AMIT';
+'AMIT'
+typeof a;
+'string'
+a = true;
+true
+typeof a;
+'boolean'
+var arr = [10,20,30];
+undefined
+var student = {id:1001, name:'Shyam', course:'JS'};
+undefined
+typeof student;
+'object'
+typeof arr;
+'object'
+arr instanceof Array;
+true
+typeof Array;
+'function'
+student instanceof Object;
+true
+typeof Object;
+'function'
+arr instanceof Object;
+true
+arr;
+(3) [10, 20, 30]
+arr[0];
+10
+student;
+{id: 1001, name: 'Shyam', course: 'JS'}
+student['id'];
+1001
+a = 434657678675464564356456745867876578678;
+4.346576786754646e+38
+typeof a;
+'number'
+Number.isSafeInteger(a);
+false
+a = Number.MAX_SAFE_INTEGER;
+9007199254740991
+a = 9007199254740991n;
+9007199254740991n
+typeof a;
+'bigint'
+++a;
+9007199254740992n
+++a;
+9007199254740993n
+++a;
+9007199254740994n
+++a;
+9007199254740995n
+++a;
+9007199254740996n
+a = a + 6547568656454345746534n;
+6547577663653600487530n
+a = a + 6547568656454345746534;
+VM979:1 Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions
+    at <anonymous>:1:7
+(anonymous) @ VM979:1
+a = BigInt("654645345435345456575675675");
+654645345435345456575675675n
+a;
+654645345435345456575675675n
+var g = Symbol();
+undefined
+g;
+Symbol()
+var g2 = Symbol();
+undefined
+g == g2;
+false
+Symbol() == Symbol();
+false
+var arr = [10,20,30];
+undefined
+arr[0];
+10
+arr = null;
+null
+arr;
+null
+arr[0];
+VM1383:1 Uncaught TypeError: Cannot read properties of null (reading '0')
+    at <anonymous>:1:4
+(anonymous) @ VM1383:1
+typeof arr;
+'object'
+typeof null;
+'object'

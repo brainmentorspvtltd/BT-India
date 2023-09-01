@@ -1,0 +1,42 @@
+function Product(){
+    //var product = {}; // Object Literal (Generic)
+    console.log('Product Object is ', this);
+    // this - keyword (Current Calling object reference)
+}
+var phone = new Product();
+VM317:3 Product Object is  Product {}
+undefined
+Product(); 
+VM317:3 Product Object is  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
+Product(); // window.Product() // Default Binding
+VM317:3 Product Object is  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
+var p = new Product(); // Explicit Binding
+VM317:3 Product Object is  Product {}
+undefined
+function Product(id, name, price, qty){
+    this.id = id;
+    this.name = name;
+    this.price = price;
+    this.qty = qty;
+    //var product = {}; // Object Literal (Generic)
+   // console.log('Product Object is ', this);
+    // this - keyword (Current Calling object reference)
+}
+
+undefined
+var p = new Product();
+undefined
+p;
+Product {id: undefined, name: undefined, price: undefined, qty: undefined}
+var p = new Product(1001, "A",999,10);
+undefined
+p;
+Product {id: 1001, name: 'A', price: 999, qty: 10}
+typeof p;
+'object'
+p instanceof Product;
+true
+p instanceof Object;
+true

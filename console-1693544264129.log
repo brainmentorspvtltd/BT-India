@@ -1,0 +1,71 @@
+function show(...a){
+    console.log(a);
+}
+undefined
+show();
+VM72:2 []
+undefined
+show(10,20);
+VM72:2 (2) [10, 20]
+undefined
+show(10,20,30,40);
+VM72:2 (4) [10, 20, 30, 40]
+undefined
+function show(...a){
+   // console.log(a);
+    for(var i = 0; i<a.length; i++){
+        console.log(a[i]);
+    }
+}
+undefined
+show(10,20,30);
+VM236:4 10
+VM236:4 20
+VM236:4 30
+undefined
+function show(...a){
+   // console.log(a);
+   for (var i of a){
+       console.log(i);
+   }
+}
+undefined
+show(10,20,30);
+VM328:4 10
+VM328:4 20
+VM328:4 30
+undefined
+function show(x,y,...a,...b){
+   // console.log(a);
+    for(var i = 0; i<a.length; i++){
+        console.log(a[i]);
+    }
+}
+VM414:1 Uncaught SyntaxError: Rest parameter must be last formal parameter
+function show(x,y,...a){
+   // console.log(a);
+    for(var i = 0; i<a.length; i++){
+        console.log(a[i]);
+    }
+}
+undefined
+function show(...a){
+   // console.log(a);
+   for (var i in a){
+       console.log(i , a[i]);
+   }
+}
+undefined
+show(10,20,30);
+VM465:4 0 10
+VM465:4 1 20
+VM465:4 2 30
+undefined
+var w = {id:1001,name:'Ram'};
+undefined
+for(var key in w){
+    console.log(key, w[key]);
+}
+VM689:2 id 1001
+VM689:2 name Ram
+undefined

@@ -1,0 +1,97 @@
+function show(){
+    console.log("I am Show ");
+}
+undefined
+show();
+VM96:2 I am Show 
+undefined
+show(10,20);
+VM96:2 I am Show 
+undefined
+show("Amit");
+VM96:2 I am Show 
+undefined
+function add(a,b){
+    return a + b;
+}
+undefined
+add(10,20);
+30
+add(10);
+NaN
+typeof NaN;
+'number'
+add();
+NaN
+undefined + undefined;
+NaN
+function add(a=0,b=0){
+    return a + b;
+}
+undefined
+add();
+0
+add(10);
+10
+add(10,20);
+30
+function add(a,b){
+    return a + b;
+}
+undefined
+add();
+NaN
+// Truthy and Falsy
+undefined
+var t;
+undefined
+typeof t;
+'undefined'
+if(typeof t === 'undefined'){
+    
+}
+undefined
+t = null;
+null
+t = NaN;
+NaN
+NaN + 100;
+NaN
+undefined + 100;
+NaN
+null + 100
+100
+var t ;
+undefined
+t?t:0
+0
+t;
+NaN
+t=100;
+100
+t?t:0
+100
+t=undefined;
+undefined
+t?t:0
+0
+t=null;
+null
+t?t:0
+0
+t="";
+''
+t?t:0
+0
+function add(a,b){
+    a = a || 0;
+    b = b || 0;
+    return a + b;
+}
+undefined
+add(10,20);
+30
+add(10);
+10
+add();
+0

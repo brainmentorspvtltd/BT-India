@@ -1,0 +1,16 @@
+function show(){
+    console.log(' I am Show and this is ' ,this);
+}
+undefined
+window;
+Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+window == this;
+true
+this;
+Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+show(); // window.show();
+VM139:2  I am Show and this is  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
+window.show();
+VM139:2  I am Show and this is  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
