@@ -1,0 +1,81 @@
+{
+    "editor.fontFamily": "JetBrains Mono",
+    "terminal.integrated.fontSize": 18,
+    "editor.fontLigatures": true,
+    "editor.suggestFontSize": 12,
+    
+  "editor.tokenColorCustomizations": {
+    "[Default Dark+]": {
+      "comments": "#50e6f6",
+      "variables": "#03ff5b",
+      "keywords": "#ecf7a5",
+      "functions": "#ff40bc",
+      "types": "#fe2727",
+      "strings": "#a0ece2",
+      "numbers": "#a5efcf",
+  },
+    "textMateRules": [
+      {
+        "scope": [
+          //following will be in italic
+          "comment",
+          "entity.name.type.class", //class names
+          "constant", //String, Number, Boolean…, this, super
+          "storage.modifier", //static keyword
+          "storage.type.class.js", //class keyword
+          "keyword", //import, export, return…
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          //following will be excluded from italics (VSCode has some defaults for italics)
+
+          "invalid",
+          "keyword.operator",
+          "constant.numeric.css",
+          "keyword.other.unit.px.css",
+          "constant.numeric.decimal.js",
+          "constant.numeric.json"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  },
+    "workbench.iconTheme": "vscode-icons",
+    "editor.cursorBlinking": "expand",
+    "editor.fontSize": 19,
+    "workbench.colorCustomizations": 
+    {
+        "debugConsole.infoForeground": "#ffffff"
+    },
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false
+    },
+    "explorer.confirmDragAndDrop": false,
+    "debug.javascript.autoAttachFilter": "always",
+    "workbench.colorTheme": "Monokai",
+    "editor.guides.bracketPairs": true,
+    "dart.flutterCreateOrganization": "com.skillrisers",
+    "editor.codeActionsOnSave": {
+
+    
+    },
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.zoomLevel": 2
+}
